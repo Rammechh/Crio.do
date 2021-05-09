@@ -1,0 +1,624 @@
+1)Sorting an array
+
+Problem Description
+Given an array of n strings, sort the array in lexicographical order.
+
+Lexicographical order is the order in which words appear in a dictionary.
+
+Input format
+There are two lines of input.
+
+First line contains integer n.
+
+Next line contains n space separated strings.
+
+Output format
+Print the sorted array.
+
+Sample Input 1
+4
+
+abc abd ab a
+
+Sample Output 1
+a ab abc abd
+
+Constraints
+1 <= n <= 10000
+
+Strings contain only lowercase english alphabet.
+
+Each string will have length no more than 15.
+
+Resource
+-----------
+Lexicographic order (https://en.wikipedia.org/wiki/Lexicographic_order)
+
+Java Program to Sort Elements in Lexicographical Order (Dictionary Order) (https://www.geeksforgeeks.org/java-program-to-sort-elements-in-lexicographical-order-dictionary-order/)
+
+Sort C++ STL (https://www.geeksforgeeks.org/sort-c-stl/)
+
+JavaScript sort (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+Comparator interface in Java (https://www.geeksforgeeks.org/comparator-interface-java/)
+
+Sorting in Python (https://docs.python.org/3/howto/sorting.html)
+
+Video resources
+---------------
+Sort C++ STL (https://www.youtube.com/watch?v=1j0GqsX2S1I)
+
+Java Collections Method sort (https://www.youtube.com/watch?v=1QhS0aTiFhQ)
+
+Sorting in Python (https://www.youtube.com/watch?v=QtwhlHP_tqc)
+
+Sort in Javascript (https://www.youtube.com/watch?v=RsFBsBep-hA)
+
+
+-----------------------------------------------------------------------Solution------------------------------------------------------------------------------------
+def sortArray(n, arr):
+    return sorted(arr)
+def main():
+    n = int(input())
+    arr = input().strip().split(' ')
+
+    sortedArr  = sortArray(n, arr)
+    print(*sortedArr)
+
+if __name__=="__main__":
+    main()
+	
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2)Find the max element
+
+Problem Description
+You are given Q queries. Each query can be of two types -
+
+Insert an element in an array.
+
+Remove the maximum element of the array,and return it.
+
+
+Note that you will first have to choose the data structure you’re going to use and define it as a class variable before you write the logic for the methods. This data structure should then be accessible to all methods of the class.
+
+
+You’ll then have to implement the insert() and getMax() methods using the data structure you defined.
+
+
+You do not have to write the main method, or worry about input output - that is handled behind the scenes. You have to ensure that you use the arguments to the functions and return the output based on the return type of the functions.
+
+Input format
+There are Q+1 lines of input
+
+First line contains Q, the number of queries.
+
+Next Q lines will contain any of these two formats :
+
+1 3 - Meaning - insert element 3 in the array
+
+2 - Meaning remove the maximum element in the array and return it.
+
+Output format
+For each query of the second type print the maximum element inside the array.
+
+Sample Input 1
+5
+
+1 3
+
+1 2
+
+2
+
+1 1
+
+2
+
+Sample Output 1
+3
+
+2
+
+Explanation
+Note that there will be no output for query type 1, thus, we get outputs for only the two queries of type 2.
+
+In the first query, the array will be [3, 2] and thus, the largest element in the array will be 3, which is removed and returned. In the second query, the array will be [2, 1], and thus, the largest element is 2, which is removed and returned.
+
+Constraints
+1 <= Q <= 10^5
+
+-10^9 <= X <= 10^9
+
+Resource
+---------
+Priority Queue C++ STL (https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/)
+
+Priority Queue in java (https://www.geeksforgeeks.org/priority-queue-class-in-java-2/)
+
+Priority Queue in python (https://www.geeksforgeeks.org/priority-queue-in-python/)
+
+Priority Queue in javascript - Note that Javascript doesn’t have a built in priority queue structure, unlike the other languages. (https://www.geeksforgeeks.org/implementation-priority-queue-javascript/)
+
+NPM package for Priority Queue in Javascript (https://www.npmjs.com/package/javascript-priority-queue)
+
+Video Resources
+----------------
+Priority Queue Concept (Language independent) (https://www.youtube.com/watch?v=wptevk0bshY&t=700s)
+
+Priority Queue C++ (https://www.youtube.com/watch?v=vc7i0bBuQEM)
+
+Priority Queue Java (https://www.youtube.com/watch?v=TXU44xVc6gY)
+
+Priority Queue Python (https://www.youtube.com/watch?v=wRvOzgt2ygs)
+
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+arr=[]
+def insert(num):
+    arr.append(num)
+
+def getMax():
+    arr.sort()
+    remov=arr.pop()
+    return remov
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)Most frequent character in string
+
+Problem Description
+You are given a string which comprises lower case alphabets (a-z), upper case alphabets (A-Z), numbers, (0-9) and special characters like !,-.; etc.
+
+
+	
+You are supposed to find out which character occurs the maximum number of times and its occurrence count in the given string. If two characters occur equal number of times, you have to output the character with the lower ASCII value.
+
+
+For example, if your string was: aaaaAAAA, your output would be: A 4, because A has lower ASCII value than a.
+
+Input format
+One line of input containing the string S.
+
+Output format
+You will have to output two space separated values:
+
+The character which occurs the maximum number of times.
+
+The number of its occurrence.
+
+Sample Input 1
+Statements are unique.
+
+Sample Output 1
+e 4
+
+Constraints
+1 <= |S| <= 100
+
+Resource
+-----------
+How To Find Maximum Occurring Character In String In Java? (https://javaconceptoftheday.com/maximum-occurring-character-in-string-in-java/)
+
+Return maximum occurring character in an input string (https://www.geeksforgeeks.org/maximum-occurring-character-in-an-input-string-set-2/)
+
+C++ Map STL (https://www.freecodecamp.org/news/c-plus-plus-map-explained-with-examples/)
+
+Javascript map (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+Java map (https://www.geeksforgeeks.org/map-interface-java-examples/)
+
+Python dictionary (https://www.tutorialspoint.com/python_data_structure/python_hash_table.htm)
+
+Video Resources
+----------------
+Map C++ STL(https://www.youtube.com/watch?v=kDwXAmLz47w)
+
+Map Interface Java (https://www.youtube.com/watch?v=uu20xO9AaU4)
+
+Python Dictionary(https://www.youtube.com/watch?v=daefaLgNkw0)
+
+Map Javascript(https://www.youtube.com/watch?v=hYu6TCCk8Yo)
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+#from collections import Counter
+def mostFrequent(s):
+    Output=[]
+    Dict={}
+    for i in s:
+        if i in Dict:
+            Dict[i]+=1
+        else:
+            Dict[i]=1 
+    maxValue =max(Dict.values())
+    for k,v in sorted(Dict.items()):
+        if v==maxValue:
+            Output.append(k)
+            Output.append(v)
+            break
+
+    return Output
+
+def main():
+    s = input()
+    res = mostFrequent(s)
+    print(*res)
+
+
+if __name__ == "__main__":
+    main()
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4)Most repeated temperature in an array
+
+
+Problem Description
+Given an array of temperatures, find the temperature that has been repeated the maximum number of days.
+
+Input format
+There are two lines of input.
+
+First line contains an integer N, the number of days.
+
+Next line contains N space separated integers, the temperature of each day.
+
+Output format
+Print the temperature which has occured most number of times. If two temperatures have occured the same number of times print the one which is higher.
+
+Sample Input 1
+5
+
+-10 11 15 20 11
+
+Sample Output 1
+11
+
+Constraints
+1 <= N <= 100
+
+-30 <= A[i] <= 50
+
+Resource
+----------
+Most frequent element in an array (https://www.geeksforgeeks.org/frequent-element-array/)
+
+HashMap and TreeMap in Java.(https://www.geeksforgeeks.org/hashmap-treemap-java/)
+
+unordered_map in C++ STL (https://www.geeksforgeeks.org/unordered_map-in-cpp-stl/)
+
+Hash Tables and Hashmaps in Python | Hash Table vs Hashmap (https://www.edureka.co/blog/hash-tables-and-hashmaps-in-python/)
+
+JavaScript HashMap (https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/#HashMaps)
+
+Video Resource
+---------------
+Unordered Map C++ (https://www.youtube.com/watch?v=2qplocJdY5A)
+
+Hashmap, Treemap Java (https://www.youtube.com/watch?v=BRGzv5vefGA)
+
+Hashtables and Hashmaps in Python (https://www.youtube.com/watch?v=BRGzv5vefGA)
+
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+from collections import Counter
+def mostRepeatedTemperature(n, temperature):
+    dup=Counter(temperature)
+    Max=max(dup.values())
+    for k,v in sorted(dup.items()):
+        if v==Max:
+            res=k
+    return res
+
+def main():
+    n = int(input())
+    temperature = list(map(int, input().split()))
+    res = mostRepeatedTemperature(n, temperature)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5)Evaluating a postfix expression
+
+
+Problem Description
+Postfix expressions are an ordering of mathematical operations, where the operator(+,-,* etc) comes after the operands.
+
+For instance, an operation 2 + 3 (infix notation, which humans use) will be represented as 2 3 + in postfix notation. The computers can understand postfix notation.
+
+Your job is to evaluate the given postfix expression. The expression is given as a string where each token is separated by a space.
+
+The possible operators can be +, - and *
+
+Input format
+One line of input, containing the string S.
+
+Output format
+Print the result of the given expression
+
+Sample Input 1
+2 3 +
+
+Sample Output 1
+5
+
+Constraints
+1 <= |S| <= 100
+
+Resource
+---------------
+Evaluate a postfix expression (https://www.techiedelight.com/evaluate-given-postfix-expression/)
+
+Stack C++ STL (https://www.geeksforgeeks.org/stack-in-cpp-stl/)
+
+Stack in java (https://www.javatpoint.com/java-stack)
+
+Stack in python (https://www.geeksforgeeks.org/stack-in-python/)
+
+Stack in javascript (https://www.geeksforgeeks.org/implementation-stack-javascript/)
+
+Video Resources
+---------------
+Stack C++ STL (https://www.youtube.com/watch?v=fV_DchJem0U)
+
+Stack Java (https://www.youtube.com/watch?v=_HOgp9PE3g8)
+
+Stack Javascript (https://www.youtube.com/watch?v=wtynhUwS5hI)
+
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+
+def postfixExpression(expression):
+    oper=expression.split()
+    operator="+-*"
+    stack=[]
+    for i in oper:
+        if i in operator:
+            a=stack.pop()
+            b=stack.pop()
+            if i=='+':
+                stack.append(a+b)
+            elif i=='-':
+                stack.append(b-a)
+            elif i=='*':
+                stack.append(a*b)
+        else:
+            stack.append(int(i))
+    return(stack[0])
+    
+def main():
+    expression = input().strip()
+    print(postfixExpression(expression))
+
+if __name__=="__main__":
+    main()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6)Perform queue operations
+
+Problem Description
+A queue is a data structure that follows the First In First Out principle (FIFO). That is, an element inserted into the queue first, can be retrieved first.
+
+In this problem, you will perform some operations on queue.
+
+There are Q queries. Each query can be of two types -
+
+Insert an element into the queue.
+
+Remove the first element of the queue and return it.
+
+Note that you are not expected to create a queue from scratch, but use the queue data structure and its accompanying methods.
+
+Input format
+There are Q+1 lines of input
+
+First line contains Q, number of queries.
+
+Next Q lines will contain either of the following -
+
+1 X - insert X in the queue.
+
+2 - remove the first element of the queue and return it.
+
+Output format
+For each query of the second type print the first element.
+
+Sample Input 1
+5
+
+1 3
+
+1 2
+
+2
+
+1 1
+
+2
+
+Sample Output 1
+3
+
+2
+
+Constraints
+1 <= Q <= 100
+
+-10^5 <= X <= 10^5
+
+Resource
+----------
+Queue C++ STL (https://www.geeksforgeeks.org/queue-cpp-stl/)
+
+Queue in Java (https://www.edureka.co/blog/java-queue/)
+
+Queue in Python (https://www.geeksforgeeks.org/queue-in-python/)
+
+Queue in Javascript (https://www.geeksforgeeks.org/implementation-queue-javascript/)
+
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+
+
+class Solution:
+    
+    def __init__(self):
+        self.queue=[]
+    def insert(self, num):
+        self.queue.append(num)
+    def getFirst(self):
+        return self.queue.pop(0)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7)Perform repeated subtractions in array
+
+
+Problem Description
+There is an array of N elements. Perform the following operation until there are one or no elements left in the array :
+
+Remove the largest and second largest element from the array and insert their absolute difference back in the array.
+
+Input format
+There are two lines of input.
+
+First line contains N, the number of elements.
+
+Second line contains N space separated integers.
+
+Output format
+Print the last element left in the array.
+
+Sample Input 1
+5
+
+2 1 11 13 7
+
+Sample Output 1
+2
+
+Constraints
+1 <= N <= 10^5
+
+1 <= A[i] <= 10^9
+
+Resource
+-------------
+Last element remaining by deleting two largest elements and replacing by their absolute difference if they are unequal (https://www.geeksforgeeks.org/last-element-remaining-by-deleting-two-largest-elements-and-replacing-by-their-absolute-difference-if-they-are-unequal/)
+
+Priority Queue in C++ Standard Template Library (STL) (https://www.geeksforgeeks.org/priority-queue-in-cpp-stl/)
+
+PriorityQueue in Java (https://www.geeksforgeeks.org/priority-queue-class-in-java-2/)
+
+Heap queue (or heapq) in Python (https://www.geeksforgeeks.org/heap-queue-or-heapq-in-python/)
+
+Implementation of Priority Queue in Javascript (https://www.geeksforgeeks.org/implementation-priority-queue-javascript/)
+
+Video Resources
+-----------------
+Priority Queue Concept (Language independent) (https://www.youtube.com/watch?v=wptevk0bshY&t=700s)
+
+Priority Queue C++ (https://www.youtube.com/watch?v=vc7i0bBuQEM)
+
+Priority Queue Java (https://www.youtube.com/watch?v=TXU44xVc6gY)
+
+Priority Queue Python (https://www.youtube.com/watch?v=wRvOzgt2ygs)
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+
+
+def reduceArray(n, arr):
+    while len(arr)>1:
+        arr.sort(reverse=True)
+        a=arr.pop(0)
+        b=arr.pop(0)
+        if a or b> pow(10,)
+        arr.append(abs(a-b))
+    if arr[0]>2147483633:
+        return 2147483633
+    return arr[0]
+def main():
+    n = int(input())
+    arr = list(map(int, input().split()))
+    res = reduceArray(n, arr)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8)Check balanced parentheses sequence [ Pattern approach video ]
+
+
+Problem Description
+Given a string S containing the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+For an input string to be valid:
+
+Open brackets must be closed by the same type of brackets.( can be closed by ) only
+
+Open brackets must be closed in the correct order. ([]) is valid, ([)] is not.
+
+Note: An empty string is also considered valid.
+
+Input format
+One line containing a string with a bracket sequence.
+
+Output format
+Return "true" if balanced, false otherwise.
+
+Constraints
+0 <= | S | <= 10^5
+
+Sample Input 1
+()[]{}
+
+Sample Output 1
+true
+
+Explanation 1
+The given sequence of brackets is valid as per the rules specified.
+
+Sample Input 2
+([)]
+
+Sample Output 2
+false
+
+Explanation 2
+The given sequence of brackets is invalid as per the rules specified.
+
+Resource
+---------
+Check for Balanced Brackets in an expression (well-formedness) using Stack(https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/)
+
+Video
+------
+https://youtu.be/n9Lu6xYwEoY
+-------------------------------------------------------------------------Solution----------------------------------------------------------------------------------------------
+# Implement your solution here
+def isValid(s):
+    stack=[]
+    char=['{','[','(']
+    for i in s:
+        if i in char:
+            stack.append(i)
+        else:
+            if stack==[]:
+                return "false"
+            cur=stack.pop()
+            if cur=='{':
+                if i!='}':
+                    return "false" 
+            if cur=='(':
+                if i!=')':
+                    return "false"
+            if cur=='[':
+                if i!=']':
+                    return "false"
+    if stack:
+        return "false"
+    return "true"
+
+if __name__ == '__main__':
+    s = input().strip()
+    result = isValid(s)
+    print(result)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+

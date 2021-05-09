@@ -1,0 +1,126 @@
+1)Cyclic rotation of array
+
+Problem Description
+Given an array of n integers and an integer k, rotate the array k times in clockwise order.
+
+Input format
+There are three lines of input.
+
+First line contains integer n.
+
+Next line contains n space separated integers.
+
+Next line contains the value of k.
+
+Output format
+Print the rotated array.
+
+Sample Input 1
+5
+
+1 2 3 4 5
+
+2
+
+Sample Output 1
+4 5 1 2 3
+
+Explanation 1
+After first rotation array will be 5 1 2 3 4
+
+After second rotation array will be 4 5 1 2 3
+
+Constraints
+1 <= n <= 100000
+
+1 <= element of array <= 100000
+
+0 <= k <= 100000
+
+---------------------------------------------------------Solution-----------------------------------------------
+def cyclicRotation(arr, n, k):
+    k=n-k
+    arr=arr[(n+k)%n:]+arr[0:(n+k)%n]
+    return arr
+
+def main():
+    n = int(input())
+    arr = list(map(int, input().strip().split(' ')))
+    k = int(input())
+
+    rotatedArr = cyclicRotation(arr, n, k)
+
+    print(*rotatedArr)
+
+
+if __name__ == "__main__":
+    main()
+
+
+(or)
+
+def cyclicRotation(arr, n, k):
+    k=n-k%n 
+    arr=arr[k:]+arr[0:k]
+    return arr
+
+def main():
+    n = int(input())
+    arr = list(map(int, input().strip().split(' ')))
+    k = int(input())
+
+    rotatedArr = cyclicRotation(arr, n, k)
+
+    print(*rotatedArr)
+
+
+if __name__ == "__main__":
+    main()
+	
+	
+-------------------------------------------------------------------------------------------------------------------
+2)Print a diamond pattern
+
+
+Problem Description
+Given a number n, you have to print a diamond-shaped pattern with 2n-1 rows using '*', with the i’th row having i asterisks for i <= n and 2n-i asterisks for i > n. (i starts at 1)
+
+For eg. if n = 5, the pattern will be:
+
+image alt text
+
+Input format
+One line of input, containing an integer - n.
+
+Output format
+Print the pattern as described.
+
+Sample Input 1
+5
+
+Sample Output 1
+image alt text
+
+Constraints
+0 < n < 100
+
+-------------------------------------------------------------Solution-----------------------------------------------
+def patternPrintingII(rows):
+    pattern=[]
+    for i in range(rows):
+        pattern.append(" "*(rows-i-1)+" *"*(i+1))
+    for j in range(rows-1):
+        pattern.append(" "*(j+1)+" *"*(rows-1-j))
+    return pattern
+
+def main():
+    n = int(input())
+
+    pattern = patternPrintingII(n)
+
+    for i in pattern:
+        print(i)
+
+if __name__=="__main__":
+    main()
+-------------------------------------------------------------------------------------------------------------------------

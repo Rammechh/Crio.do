@@ -1,0 +1,631 @@
+1)Reverse a given integer
+
+Problem Description
+Given a number, return the reverse of that number.
+
+Input format
+One line of input containing an integer N, the number to be reversed.
+
+Output format
+Return the reversed number. Note that the number must start with (1-9) digits only unless it is a single digit number.
+
+Sample Input 1
+15
+
+Sample Output 1
+51
+
+Constraints
+0 <= N <= 1000000
+
+Explanation
+Reverse of 15 is 51.
+
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def reverseNum(num):
+    rev=0
+    while num>0:
+        rem=num%10
+        rev=rev*10+rem 
+        num=num//10
+    return int(rev)
+
+def main():
+    num = int(input())
+    reversedNum = reverseNum(num)
+    print(reversedNum)
+
+
+if __name__ == "__main__":
+    main()
+
+-------------------------------------------------------------------------------------------------------------
+2)Find given element in the array
+
+
+Problem Description
+Given an array of n elements and an integer x,find the index where x is present in the array. If there are multiple occurrences, find the leftmost one. If x is not present, return -1.
+
+Input format
+There are three lines of input.
+
+First line contains integer n.
+
+Second line contains n space separated integers representing the array.
+
+Third line contains the value of x.
+
+Output format
+An integer representing the index of x in the array.
+
+Sample Input 1
+5
+
+1 3 4 2 1
+
+1
+
+Sample Output 1
+0
+
+Explanation 1
+1 is present at 0 and 4 indexes and the leftmost index is 0.
+
+Constraints
+1 <= n <= 100000
+
+0 <= x <= 10^9
+
+Resource
+Search, insert and delete in unsorted array(https://www.geeksforgeeks.org/search-insert-and-delete-in-an-unsorted-array/)
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def findElement(n, arr, x):
+    for i in range(n):
+        if (arr[i]==x):
+            return i 
+    return -1
+
+    """if(x in arr):
+        return arr.index(x)
+    else:
+        return -1"""
+
+
+def main():
+    n = int(input().strip())
+    arr = list(map(int, input().strip().split(' ')))
+    x = int(input().strip())
+
+    xIndex = findElement(n, arr, x)
+    print(xIndex)
+
+if __name__=="__main__":
+    main()
+--------------------------------------------------------------------------------------------------------------
+
+3)Average height in an array
+Problem Description
+Given the heights of n students of a class, find the average height. Your answer should be accurate upto 5 decimal places.
+
+Input format
+There are two lines of input.
+
+First line contains an integer n,the number of students.
+
+Second line contains n space-separated decimal numbers - The array with the heights of the students.
+
+Output format
+Print the average height.
+
+Sample Input 1
+6
+
+2.2 1 3 1.9 2.4 1.7
+
+Sample Output 1
+2.033333
+
+Explanation 1
+(2.2+1+3+1.9+2.4+1.7) / 6 = 12.2/6 = 2.03333
+
+Constraints
+0 < n < 100
+
+0 < height < 100
+
+Resource
+Array Average - Iterative and Recursive(https://www.geeksforgeeks.org/program-average-array-iterative-recursive/)
+
+solution------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def averageHeight(n,a):
+    """Sum=0
+    for i in a:
+        Sum+=i 
+    return Sum/n"""
+
+    return sum(a)/n
+
+def main():
+    n=int(input())
+    a=list(map(float,input().split()))
+    result = averageHeight(n,a)
+    print(result)
+
+if __name__=="__main__":
+    main()
+
+-------------------------------------------------------------------------------------------------------
+4)Capitalise first letter of every word
+
+Problem Description
+Given a paragraph of words, capitalise the first character of each word and return the updated paragraph.
+
+Input format
+One line of input which contains a string, the paragraph.
+
+Output format
+Return the paragraph after capitalising each word.
+
+Sample Input 1
+the quick Brown fox jumps over The lazy dog.
+
+Sample Output 1
+The Quick Brown Fox Jumps Over The Lazy Dog.
+
+Constraints
+Length of paragraph < 100
+
+The paragraph contains spaces, lowercase, uppercase characters and ‘.’.
+
+Resource
+Convert First character of each word to uppercase
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def capitalise(s):
+    S=""
+    s=" "+s
+    for i in range(1,len(s)):
+        if s[i-1]==" ":
+            S+=s[i].upper()
+        else:
+            S+=s[i]
+    return(S)
+def main():
+    s = input()
+    res = capitalise(s)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()
+
+----------------------------------------------------------------------------------------------------------
+5)
+Problem Description
+Given a string, count the total number of vowels present in that string.
+
+Note: The string contains uppercase and lowercase english alphabets only.
+
+Input format
+One line of input, which contains the given string.
+
+Output format
+Print the total number of vowels.
+
+Sample Input 1
+language
+
+Sample Output 1
+4
+
+Explanation 1
+There are a total 4 vowels in the string "language" i.e. 'a', 'u', 'a', 'e'.
+
+Constraints
+0 < Length of string < 100
+
+Resource
+Iterative and recursive methods to count vowels in a string(https://www.geeksforgeeks.org/program-count-vowels-string-iterative-recursive/)
+
+Video URL (https://youtu.be/9MHAqNRYQ90)
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def countVowels(s):
+    vowels="aeiou"
+    count=0
+    for i in s.lower():
+        if i in vowels:
+            count+=1
+    return count
+
+def main():
+    s = input()
+    res = countVowels(s)
+    print(res)
+
+
+if __name__ == "__main__":
+    main()
+
+
+-----------------------------------------------------------------------------------------------------
+6)Diagonal Sum in a matrix [Crio Methodology Video]
+
+Problem Description
+Given a matrix of dimensions n x n, find the sum of elements along the principal diagonal of the matrix.
+
+Principal diagonal is the diagonal that starts at top left(0,0),(1,1) and goes to the bottom right (n-1,n-1).
+
+Input format
+There are n+1 lines of input.
+
+First line contains integer n.
+
+In the next n lines each line contains n elements.
+
+Output format
+An integer representing the sum of diagonal elements.
+
+Sample Input 1
+4
+
+1 2 3 4
+
+1 2 4 5
+
+2 3 3 4
+
+1 1 2 3
+
+Sample Output 1
+9
+
+Constraints
+1 <= n <= 100
+
+0 <= element of matrix <= 10^5
+
+Resource
+Sum of diagonal Elements(https://www.geeksforgeeks.org/efficiently-compute-sums-of-diagonals-of-a-matrix/)
+
+Video URL: https://youtu.be/y2fC4RYtNv8
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def diagonalSum(matrix, n):
+    Sum=0
+    for i in range(n):
+        Sum+=matrix[i][i]
+    return Sum
+
+def main():
+    n = int(input())
+
+    matrix = []
+
+    for i in range(0, n):
+        row = list(map(int, input().strip().split(' ')))
+        matrix.append(row)
+    
+    ans = diagonalSum(matrix, n)
+    print(ans)
+
+
+if __name__ == "__main__":
+    main()
+
+
+
+----------------------------------------------------------------------------------------------------------
+7)Check if matrix is a magic square
+
+Problem Description
+Given a matrix of dimensions n x n having elements 1 to n*n distinct elements, check whether the matrix is magic square or not.
+
+Magic square is a square that has the same sum along all rows, columns and diagonals.
+
+Input format
+There are n + 1 lines of input.
+
+First line contains integer n.
+
+The next n lines contain n space separated elements.
+
+Output format
+Print "Yes" if it is a magic square , "No" otherwise.
+
+Sample Input 1
+3
+
+4 9 2
+
+3 5 7
+
+8 1 6
+
+Sample Output 1
+Yes
+
+Explanation 1
+All rows, columns and diagonals have sum 15.
+
+Constraints
+1 <= n <= 100
+
+1 <= element of matrix <= n x n
+
+Resource
+Check whether given matrix is a magic square(https://www.geeksforgeeks.org/check-given-matrix-is-magic-square-or-not/)
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def checkMagicSquare(n, matrix):
+    fDiagonal=0
+    for i in range(n):
+        fDiagonal+=matrix[i][i]
+     
+    rDiagonal=0
+    for i in range(n):
+        rDiagonal+=matrix[i][n-i-1]
+    if rDiagonal!=fDiagonal:
+        return False
+    
+    for i in range(n):
+        rowCount=0
+        colCount=0
+        for j in range(n):
+            rowCount+=matrix[i][j]
+            colCount+=matrix[j][i]
+        if rowCount!=fDiagonal or colCount!=fDiagonal:
+            return False
+        
+    return True
+
+def main():
+    n = int(input())
+    matrix = []
+
+    for i in range(0, n):
+        row = list(map(int, input().split(' ')))
+        matrix.append(row)
+
+    isMagicSquare = checkMagicSquare(n, matrix)
+
+    if(isMagicSquare):
+        print("Yes")
+    else:
+        print("No")
+
+
+if __name__ == "__main__":
+    main()
+
+End--------------------------------------------------------------------------------------------------
+8)Addition Of two matrices
+
+Problem Description
+Given two matrices of dimension n x m, add the two matrices and print the resultant matrix.
+
+Input format
+There are 2n+1 lines of input.
+
+First line contains two space separated integers n, m.
+
+In the next 2n lines, each line contains m elements. The first n lines are for the first matrix, next n for the second matrix.
+
+Output format
+Print the resultant matrix.
+
+Sample Input 1
+2 2
+
+1 2
+
+3 4
+
+1 1
+
+1 1
+
+Sample Output 1
+2 3
+
+4 5
+
+Constraints
+1 <= n,m <= 100
+
+0 <= element of matrices <= 100000
+
+Resource
+Addition of two matrices(https://www.geeksforgeeks.org/program-addition-two-matrices/)
+
+solution------------------------------------------------------------------------------------------
+
+# TODO: Implement this method
+def additionOfMatrix(n, m, matrixOne, matrixTwo):
+    matrix=[[0]*m for i in range(n)]
+    for i in range(n):
+        for j in range(m):
+            matrix[i][j]= matrixOne[i][j]+matrixTwo[i][j]
+    return matrix
+
+def main():
+    n, m = map(int, input().split(' '))
+
+    matrixOne = []
+    matrixTwo = []
+
+    for i in range(n):
+        row = list(map(int, input().split(' ')))
+        matrixOne.append(row)
+    
+    for i in range(n):
+        row = list(map(int, input().split(' ')))
+        matrixTwo.append(row)
+    
+    sumMatrix = additionOfMatrix(n, m, matrixOne, matrixTwo)
+
+    for i in sumMatrix:
+        print(*i)
+
+if __name__=="__main__":
+    main()
+
+End--------------------------------------------------------------------------------------------------
+9)Printing a pyramid pattern [Crio Methodology Video]
+
+
+Problem Description
+Given a number n, you have to print a triangle-shaped pattern with n rows using '*'.
+
+For eg. if n = 4 pattern will be:
+
+image alt text
+
+You will have to return an array of strings, with each element of the array representing one row of the pattern.
+
+Input format
+There is one line of input, containing an integer n, the number of rows.
+
+Output format
+Print the pattern as described.
+
+Sample Input 1
+4
+
+Sample Output 1
+image alt text
+
+Constraints
+0 < n < 100
+
+Resource
+Printing Pyramid patterns( https://www.geeksforgeeks.org/programs-printing-pyramid-patterns-python/)
+
+Video URL ( https://youtu.be/__2bFmGPvl4)
+
+Solution-------------------------------------------------------------------------------------------------
+# TODO: Implement this method
+def maxInArray(n, arr):
+    """Max=0
+    for i in arr:
+        if i>Max:
+            Max=i
+    return Max"""
+
+    return max(arr)
+def main():
+    n = int(input())
+    arr = list(map(int, input().strip().split(' ')))
+
+    maxVal = maxInArray(n, arr)
+    print(maxVal)
+
+
+if __name__ == "__main__":
+    main()
+
+
+End--------------------------------------------------------------------------------------------------
+10)Find queried Elements in an array
+
+Problem Description
+Given a sorted array containing n elements and q queries. Each query is an integer x. Find the index at which x is present in the array. If there are multiple occurrences then find the leftmost one. If x is not present, return -1.
+
+Input format
+There are q+3 lines of input.
+
+First line contains the integer n.
+
+Second line contains n space separated integers representing the array elements.
+
+Third line contains the value of q.
+
+Next q line contains the integer x.
+
+Output format
+In each query an integer representing the index of x in the array.
+
+Sample Input 1
+5
+
+1 2 9 9 10
+
+4
+
+9
+
+1
+
+3
+
+10
+
+Sample Output 1
+2
+
+0
+
+-1
+
+4
+
+Explanation 1
+1 is present at 0 and 4 indexes and the leftmost index is 0.
+
+3 is not present.
+
+10 is at 4th index.
+
+Constraints
+1 <= n <= 100000
+
+1 <= q <= 100000
+
+0 <= x <= 10^9
+
+Resource
+First and last positions of element in sorted array(https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/)
+
+Solution-------------------------------------------------------------------------------------------------
+
+# TODO: Implement this method
+
+
+def findElementQuery(n, arr, q, query):
+    res=[]
+    for i in query:
+        if i in arr:
+            res.append(arr.index(i))
+        else:
+            res.append(-1)
+    return res
+
+def main():
+    n = int(input().strip())
+    arr = list(map(int, input().strip().split(' ')))
+    q = int(input().strip())
+
+    query = []
+
+    for i in range(q):
+        x = int(input().strip())
+        query.append(x)
+
+    result = findElementQuery(n, arr, q, query)
+
+    print(*result, sep="\n")
+
+
+if __name__ == "__main__":
+    main()
+
+End--------------------------------------------------------------------------------------------------
